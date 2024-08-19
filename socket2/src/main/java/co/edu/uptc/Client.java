@@ -6,10 +6,12 @@ import java.net.Socket;
 
 public class Client implements Runnable{
 
+    private String ip;
     private int port;
     private String msg;
 
-    public Client(int port, String msg) {
+    public Client(String ip,int port, String msg) {
+        this.ip = ip;
         this.port = port;
         this.msg = msg;
     }
@@ -18,7 +20,7 @@ public class Client implements Runnable{
     public void run() {
         Socket socket = null;
         try {
-            socket = new Socket("localhost", port);
+            socket = new Socket(ip, port);
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
             out.writeUTF(msg);

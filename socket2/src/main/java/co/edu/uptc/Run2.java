@@ -33,7 +33,7 @@ public class Run2 extends Application implements Observer {
         stage.setTitle("CHAT 2");
         stage.show();
 
-        Server s = new Server(2);
+        Server s = new Server(1);
         s.addObserver(this);
         Thread t = new Thread(s);
         t.start();
@@ -63,7 +63,7 @@ public class Run2 extends Application implements Observer {
             msgRequest.setAlignment(Pos.CENTER_RIGHT);
             v1.getChildren().add(msgRequest);
 
-            Client c = new Client(1, "CHAT 2: " + msgRequest.getText());
+            Client c = new Client("192.168.27.3",2, "CHAT 2: " + msgRequest.getText());
             Thread thread = new Thread(c);
             thread.start();
 

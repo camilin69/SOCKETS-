@@ -61,7 +61,7 @@ public class Run1 extends Application implements Observer{
             v1.getChildren().add(msgRequest);
 
 
-            Client c = new Client(2, "CHAT 1: " + msgRequest.getText());
+            Client c = new Client("192.168.27.39",1, "CHAT 1: " + msgRequest.getText());
             Thread thread = new Thread(c);
             thread.start();
 
