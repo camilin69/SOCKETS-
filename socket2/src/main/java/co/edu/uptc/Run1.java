@@ -31,7 +31,7 @@ public class Run1 extends Application implements Observer{
         stage.setTitle("CHAT 1");
         stage.show();
 
-        Server s = new Server(1);
+        Server s = new Server(8123);
         s.addObserver(this);
         Thread t = new Thread(s);
         t.start();
@@ -61,7 +61,7 @@ public class Run1 extends Application implements Observer{
             v1.getChildren().add(msgRequest);
 
 
-            Client c = new Client("192.168.27.39",1, "CHAT 1: " + msgRequest.getText());
+            Client c = new Client("192.168.1.13",8123, "CHAT 1: " + msgRequest.getText());
             Thread thread = new Thread(c);
             thread.start();
 
