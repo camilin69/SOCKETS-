@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uptc.HandlingFruit">
+   <children>
+      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #8bdaf2;" text="FRUIT SERVER" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <VBox fx:id="infoBox" fillWidth="false" layoutY="50.0" prefHeight="550.0" prefWidth="600.0" spacing="35.0">
+         <children>
+            <TextField prefHeight="25.0" prefWidth="150.0" promptText="id">
+               <VBox.margin>
+                  <Insets left="230.0" top="50.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField prefHeight="25.0" prefWidth="150.0" promptText="name">
+               <VBox.margin>
+                  <Insets left="230.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField prefHeight="25.0" prefWidth="150.0" promptText="price">
+               <VBox.margin>
+                  <Insets left="230.0" />
+               </VBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#addFruit" text="ADD FRUIT">
+               <VBox.margin>
+                  <Insets left="270.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#addShop" text="ADD SHOP">
+               <VBox.margin>
+                  <Insets left="270.0" />
+               </VBox.margin>
+            </Button>
+            <ScrollPane prefHeight="200.0" prefWidth="600.0">
+               <content>
+                  <TableView fx:id="infoTable" prefHeight="200.0" prefWidth="584.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="updateBox" layoutY="50.0" prefHeight="550.0" prefWidth="600.0" visible="false">
+         <children>
+            <TextField layoutX="226.0" layoutY="51.0" promptText="id" />
+            <TextField layoutX="226.0" layoutY="158.0" promptText="newName" />
+            <TextField layoutX="223.0" layoutY="275.0" promptText="newPrice" />
+            <Button layoutX="277.0" layoutY="421.0" mnemonicParsing="false" onAction="#updateFruit" text="SEND" />
+         </children>
+      </AnchorPane>
+      <ToggleButton layoutX="500.0" mnemonicParsing="false" onAction="#switchIt" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: black;" text="SWITCH" textFill="WHITE">
+         <font>
+            <Font name="Agency FB" size="22.0" />
+         </font>
+      </ToggleButton>
+   </children>
+</AnchorPane>
